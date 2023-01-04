@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <%- include('./partials/head'); %>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            function checkForm() {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                function checkForm() {
                     var elements = $('.form-field');
                     var canSubmit = true;
 
-                    for (var i=0; i<elements.length; i++) {
+                    for (var i = 0; i < elements.length; i++) {
                         if (elements[i].value.length == 0) {
                             canSubmit = false;
                         }
@@ -20,18 +21,19 @@
                         $('#submit').removeAttr('disabled');
                     }
                     else {
-                         $('#submit').attr('disabled', 'disabled');
+                        $('#submit').attr('disabled', 'disabled');
                     }
-            }
+                }
 
-            $('.form-field').change(function() {
-                console.log('change events');
+                $('.form-field').change(function () {
+                    console.log('change events');
+                    checkForm();
+                });
                 checkForm();
             });
-            checkForm();
-        });
-    </script>
+        </script>
 </head>
+
 <body>
 
     <header>
@@ -39,27 +41,32 @@
     </header>
 
     <form id="form" class="container" action="/projects" method="POST">
-    <div class="dotted-gradient"></div>
+        <div class="dotted-gradient"></div>
 
         <br>
-        <center>><p class="new">Vizologi on Autopilot generates a <b>fully automatic AI-driven project</b> based on your data entry</p></center>
+        <center>><p class="new">Vizologi on Autopilot generates a <b>fully automatic AI-driven project</b> based on your
+                data entry</p>
+        </center>
 
         <div class="dotted-gradient"></div>
         <br>
         <p> &#11044; Please, introduce a short description of your <strong>IDEA</strong></p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="idea" name="idea" placeholder="Type the name of the idea" required />
+        <input class="form-field" style="font-size:18px" type="text" class="box" id="idea" name="idea"
+            placeholder="Type the name of the idea" required />
         <br>
         <p><u>View examples</u></p>
         <div class="dotted-gradient"></div>
         <br>
         <p> &#11044;<b> NAME</b> the project</p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="name" name="name" placeholder="Type here the name of the project" required />
+        <input class="form-field" style="font-size:18px" type="text" class="box" id="name" name="name"
+            placeholder="Type here the name of the project" required />
         <br>
         <p><u>View examples</u></p>
         <div class="dotted-gradient"></div>
         <br>
         <p> &#11044; What is the <b>MARKET</b> that you are targetting</p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="market" name="market" placeholder="Type here the market you are targetting ..." required />
+        <input class="form-field" style="font-size:18px" type="text" class="box" id="market" name="market"
+            placeholder="Type here the market you are targetting ..." required />
         <br>
         <div class="dotted-gradient"></div>
         <br>
@@ -77,10 +84,12 @@
         <div class="dotted-gradient"></div>
         <br>
         <p> &#x25CF;And finally, what <b>COUNTRY</b> are you targetting</p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="country" name="country" placeholder="Type here the country you are targetting ..." required />
+        <input class="form-field" style="font-size:18px" type="text" class="box" id="country" name="country"
+            placeholder="Type here the country you are targetting ..." required />
         <br>
         <button id="submit" class="" type="submit" disabled="disabled">Generate a project &#8594</button>
     </form>
     </div>
 </body>
+
 </html>
