@@ -1,0 +1,87 @@
+.new {
+    font-weight: regular;
+    font-size: 17.5px;
+    color: #000000;
+}
+
+div {
+    padding: 10px 50px;
+}
+
+.dotted-gradient {
+    background-image:
+        linear-gradient(to right, #000 30%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 13px 3px;
+    background-repeat: repeat-x;
+}
+
+input[type=text] {
+    width: 100%;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    margin: 3px 1px;
+    outline: none;
+    padding: 18px;
+    box-sizing: border-box;
+    transition: 3s;
+}
+
+/* input[type=text]:focus{
+    border-color:dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+} */
+
+p {
+    font-family: roobert, sans-serif;
+}
+
+select {
+    height: 50px;
+    width: 1300px;
+}
+
+input::placeholder {
+    color: grey;
+    font-size: 18px;
+}
+
+.class {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    font-size: 17px;
+    padding: 10px;
+}
+
+button:disabled#submit,
+button[disabled]#submit {
+    background-color: grey;
+}
+
+#submit {
+    display: block;
+    margin: auto;
+    color: white;
+    background-color: green;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 0px;
+}
+
+#newone {
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    position: absolute;
+    right: 0;
+}

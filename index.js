@@ -35,14 +35,12 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
-
 app.get('/', (req,res) =>{
    Project.find({}, (err, projects) => {
      console.log(projects);
      res.render('main', {'projects': projects})
    })
 })
-
 
 app.get('/projects', (req,res) =>{
     Project.find({}, (err, projects) => {
