@@ -4,9 +4,11 @@ var mongoose = require("mongoose")
 const { Schema } = mongoose;
 var path=require('path');
 const projectSchema = new Schema({ idea: String,name: String, market:String, continent:String, country:String }, { timestamps: true });
-const Project = mongoose.model('Project', projectSchema);
+//const Project = mongoose.model('Project', projectSchema);
 
 const app = express()
+
+const Register = require("./models/registers")
 
 // const MongoClient = require('mongodb').MongoClient;
 // const url = 'mongodb://127.0.0.1:27017';
@@ -37,7 +39,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.get('/', (req,res) =>{
-   Project.find({}, (err, projects) => {
+   Register.find({}, (err, projects) => {
      console.log(projects);
      res.render('main', {'projects': projects})
    })
@@ -45,7 +47,7 @@ app.get('/', (req,res) =>{
 
 
 app.get('/projects', (req,res) =>{
-    Project.find({}, (err, projects) => {
+    Register.find({}, (err, projects) => {
         console.log(projects);
        res.render('projects', {'projects': projects});
     })
@@ -55,7 +57,7 @@ app.get('/projects/:id', (req,res) =>{
     console.log(req.params);
     var id = req.params.id;
     console.log(id);
-    Project.findOne({ _id: id }, (err, project) => {
+    Register.findOne({ _id: id }, (err, project) => {
         console.log("*******");
         // console.log(project.id);
         console.log(project);
@@ -75,7 +77,7 @@ app.post('/projects/:id', (req,res) =>{
         country : body.country
     }
 
-    Project.updateOne({ _id: id }, data,(err,project)=>{
+    Register.updateOne({ _id: id }, data,(err,project)=>{
         if(err){
             throw err;
         }
@@ -109,7 +111,7 @@ app.post("/projects",(req,res)=>{
         country : country
     }
 
-    Project.create(data,(err,project)=>{
+    Register.create(data,(err,project)=>{
         if(err){
             throw err;
         }
