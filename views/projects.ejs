@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <%- include('./partials/head'); %>
-    </head>
-    <body>
-        <!-- <center><img src="flogo.webp" height :"150" width:"150" alt:"viz_logo" /></center> -->
-        <div class="container">
-            <div class="row">
-                <center><img src="autopilot.jpg" alt="centered image" /></center>
-            </div>
-            <div class="dotted-gradient"></div>
-            <table class="table">
-                <tbody>
-                    <% projects.forEach(function(project){ %>
-                        <tr class="row project">
-                            <td>
-                                <tr>
-                                    <th class="col-1">Idea:</th>
-                                    <td class="col-4">
-                                        <a href="/projects/<%= project.id%>">
-                                            <%= project.idea %>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="col-1">Name:</th>
-                                    <td class="col-4"><%= project.name %></td>
-                                </tr>
-                                <tr>
-                                    <th class="col-1">Market:</th>
-                                    <td class="col-4"><%= project.market %></td>
-                                </tr>
-                                <tr>
-                                    <th class="col-1">Continent:</th>
-                                    <td class="col-4"><%= project.continent %></td>
-                                </tr>
-                                <tr>
-                                    <th class="col-1">Country:</th>
-                                    <td class="col-4"><%= project.country %></td>
-                                </tr>
-                            </td>
+  <head>
+    <%- include('./partials/head'); %>
+    <script>
+      var dt = new Date();
+      document.getElementById("date-time").innerHTML = dt;
+    </script>
+  </head>
 
-                        </tr>
-                    <% }); %>
-                </tbody>
-            </table>
-            <div class="dotted-gradient"></div>
-        </div>
-    </body>
+  <body>
+    <br />
+    <header><%- include('./partials/autopilot'); %></header>
+    <!-- <center><img src="flogo.webp" height :"150" width:"150" alt:"viz_logo" /></center> -->
+    <div id="box1" style="margin-left: 5px">
+      <!-- <div class="row"></div> -->
+      <div class="dotted-gradient"></div>
+      <table class="table table-borderless">
+        <tbody>
+          <% projects.forEach(function(project){ %>
+          <tr class="row project">
+            <td>
+              <tr>
+                <th class="col-1">IDEA:</th>
+                <td class="col-4">
+                  <a href="/projects/<%= project.id%>"> <%= project.idea %> </a>
+                </td>
+              </tr>
+              <tr>
+                <th class="col-1">NAME:</th>
+                <td class="col-4"><%= project.name %></td>
+              </tr>
+              <tr>
+                <th class="col-1">MARKET:</th>
+                <td class="col-4"><%= project.market %></td>
+              </tr>
+              <tr>
+                <th class="col-1">CONTINENT:</th>
+                <td class="col-4"><%= project.continent %></td>
+              </tr>
+              <tr>
+                <th class="col-1">COUNTRY:</th>
+                <td class="col-4"><%= project.country %></td>
+              </tr>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <div class="dotted-gradient"></div>
+      <!-- <div id="current_date">
+        <script>
+          document.getElementById("current_date").innerHTML = Date();
+        </script>
+      </div> -->
+    </div>
+    <div id="current_date">
+      <script>
+        document.getElementById("current_date").innerHTML = Date();
+      </script>
+    </div>
+  </body>
 </html>

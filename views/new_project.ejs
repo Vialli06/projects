@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <%- include('./partials/head'); %>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            function checkForm() {
-                    var elements = $('.form-field');
+        <script type="text/javascript">
+            $(document).ready(function () {
+                function checkForm() {
+                    var elements = $('.form-control');
                     var canSubmit = true;
 
-                    for (var i=0; i<elements.length; i++) {
+                    for (var i = 0; i < elements.length; i++) {
                         if (elements[i].value.length == 0) {
                             canSubmit = false;
                         }
@@ -20,67 +21,89 @@
                         $('#submit').removeAttr('disabled');
                     }
                     else {
-                         $('#submit').attr('disabled', 'disabled');
+                        $('#submit').attr('disabled', 'disabled');
                     }
-            }
+                }
 
-            $('.form-field').change(function() {
-                console.log('change events');
+                $('.form-control').change(function () {
+                    console.log('change events');
+                    checkForm();
+                });
                 checkForm();
             });
-            checkForm();
-        });
-    </script>
+        </script>
 </head>
-<body>
 
+<body>
+    <br>
     <header>
         <%- include('./partials/autopilot'); %>
     </header>
-
-    <form id="form" class="container" action="/projects" method="POST">
-    <div class="dotted-gradient"></div>
-
-        <br>
-        <center>><p class="new">Vizologi on Autopilot generates a <b>fully automatic AI-driven project</b> based on your data entry</p></center>
+    <div id="box1" style="margin-left: 5px">
 
         <div class="dotted-gradient"></div>
+
         <br>
-        <p> &#11044; Please, introduce a short description of your <strong>IDEA</strong></p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="idea" name="idea" placeholder="Type the name of the idea" required />
-        <br>
-        <p><u>View examples</u></p>
+        <center>
+            <p class="new">Vizologi on Autopilot generates a <b>fully automatic AI-driven project</b> based on your
+                data entry</p>
+        </center>
+
         <div class="dotted-gradient"></div>
         <br>
-        <p> &#11044;<b> NAME</b> the project</p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="name" name="name" placeholder="Type here the name of the project" required />
-        <br>
-        <p><u>View examples</u></p>
-        <div class="dotted-gradient"></div>
-        <br>
-        <p> &#11044; What is the <b>MARKET</b> that you are targetting</p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="market" name="market" placeholder="Type here the market you are targetting ..." required />
-        <br>
-        <div class="dotted-gradient"></div>
-        <br>
-        <p> &#11044; What <b>CONTINENT</b> are you targetting</p>
-        <select class="form-field" style="font-size:17.5px" required id="continent" class="box" name="continent">
-            <option value="">Select a continent</option>
-            <option value="North America">North America</option>
-            <option value="South America">South America</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Africa">Africa</option>
-            <option value="Oceania">Oceania</option>
-            <option value="Antartica">Antartica</option>
-        </select>
-        <div class="dotted-gradient"></div>
-        <br>
-        <p> &#x25CF;And finally, what <b>COUNTRY</b> are you targetting</p>
-        <input class="form-field" style="font-size:18px" type="text" class="box" id="country" name="country" placeholder="Type here the country you are targetting ..." required />
-        <br>
-        <button id="submit" class="" type="submit" disabled="disabled">Generate a project &#8594</button>
-    </form>
-    </div>
+
+
+        <form id="form" action="/projects" method="POST" class="was-validated">
+            <p> &#11044; Please, introduce a short description of your <strong>IDEA</strong></p></label>
+
+            <!-- <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+
+            <input type="text" class="form-control form-control-lg" placeholder="Type the name of the idea" id="idea"
+                name="idea" required>
+                <!-- <div class="valid-feedback"></div> -->
+            <br>
+            <p><u>View examples</u></p>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p> &#11044;<b> NAME</b> the project</p>
+            <input type="text" class="form-control form-control-lg" placeholder="Type here the name of the project"
+                id="name" name="name" required>
+            <br>
+            <p><u>View examples</u></p>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p> &#11044; What is the <b>MARKET</b> that you are targetting</p>
+            <input type="text" class="form-control form-control-lg"
+                placeholder="Type here the market you are targetting ..."" id=" market" name="market" required>
+            <br>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p> &#11044; What <b>CONTINENT</b> are you targetting</p>
+            <select class="form-control " id="continent" name="continent" required>
+                <option value="">Select a continent</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Africa">Africa</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Antartica">Antartica</option>
+            </select>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p> &#x25CF;And finally, what <b>COUNTRY</b> are you targetting</p>
+            <input type="text" class="form-control form-control-lg"
+                placeholder="Type here the country you are targetting ..." id="country" name="country" required>
+            <br>
+
+            <button id="submit" class="" type="submit" disabled="disabled">Generate a project &#8594</button>
+        </form>
+
+
 </body>
+
 </html>
