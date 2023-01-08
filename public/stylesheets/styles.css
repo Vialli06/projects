@@ -1,3 +1,4 @@
+
 .new {
     font-weight: regular;
     font-size: 17.5px;
@@ -9,8 +10,7 @@ div {
 }
 
 .dotted-gradient {
-    background-image:
-        linear-gradient(to right, #000 30%, rgba(255, 255, 255, 0) 0%);
+    background-image: linear-gradient(to right, #000 30%, rgba(255, 255, 255, 0) 0%);
     background-position: bottom;
     background-size: 13px 3px;
     background-repeat: repeat-x;
@@ -47,6 +47,7 @@ input::placeholder {
 }
 
 .class {
+
     text-align: center;
 }
 
@@ -63,8 +64,7 @@ button {
     padding: 10px;
 }
 
-button:disabled#submit,
-button[disabled]#submit {
+button:disabled#submit, button[disabled]#submit {
     background-color: grey;
 }
 
