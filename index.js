@@ -2,7 +2,7 @@ var express = require("express")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
 const { Schema } = mongoose;
-var path=require('path');
+var path = require('path');
 
 const app = express()
 

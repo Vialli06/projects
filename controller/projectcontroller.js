@@ -1,14 +1,14 @@
 const Project = require("../models/project")
 var mongoose = require("mongoose")
 
-exports.find_all = (req,res) =>{
+exports.find_all = (req, res) => {
     Project.find({}, (err, projects) => {
         console.log(projects);
-       res.render('projects/list', {'projects': projects});
+        res.render('projects/list', { 'projects': projects });
     })
 }
 
-exports.find_one = (req,res) =>{
+exports.find_one = (req, res) => {
     console.log(req.params);
     var id = req.params.id;
     console.log(id);
@@ -16,37 +16,37 @@ exports.find_one = (req,res) =>{
         console.log("*******");
         // console.log(project.id);
         console.log(project);
-        res.render('projects/view',{'project': project });
+        res.render('projects/view', { 'project': project });
     })
- }
+}
 
- exports.update_one = (req,res) =>{
+exports.update_one = (req, res) => {
     var id = req.params.id;
     var body = req.body;
 
     var data = {
         idea: body.idea,
-        name : body.name,
+        name: body.name,
         market: body.market,
-        continent : body.continent,
-        country : body.country
+        continent: body.continent,
+        country: body.country
     }
 
-    Project.updateOne({ _id: id }, data,(err,project)=>{
-        if(err){
+    Project.updateOne({ _id: id }, data, (err, project) => {
+        if (err) {
             throw err;
         }
         console.log("Record Updated Successfully");
     });
 
     res.redirect('/projects');
- }
+}
 
- exports.new = (req,res) =>{
+exports.new = (req, res) => {
     res.render('projects/new');
 }
 
-exports.create = (req,res)=>{
+exports.create = (req, res) => {
     console.log("heer********************** ");
     // console.log(req);
     console.log(req.body);
@@ -59,14 +59,14 @@ exports.create = (req,res)=>{
 
     var data = {
         idea: idea,
-        name : name,
+        name: name,
         market: market,
-        continent : continent,
-        country : country
+        continent: continent,
+        country: country
     }
 
-    Project.create(data,(err,project)=>{
-        if(err){
+    Project.create(data, (err, project) => {
+        if (err) {
             throw err;
         }
         console.log("Record Inserted Successfully");

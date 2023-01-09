@@ -3,5 +3,5 @@ const home = require('../controller/homecontroller');
 const app = Router();
 
 app.get('/', home);
-  
+
 module.exports = app;
