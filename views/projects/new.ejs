@@ -35,12 +35,18 @@
 </head>
 
 <body>
-    <br>
-    <header>
-        <%- include('../partials/autopilot'); %>
-    </header>
-    <div id="box1" style="margin-left: 5px">
 
+    <br>
+
+
+
+    <div class="container">
+        <header>
+            <%- include('../partials/top-nav'); %>
+                <%- include('../partials/autopilot'); %>
+        </header>
+
+        </br>
         <div class="dotted-gradient"></div>
 
         <br>
@@ -50,39 +56,41 @@
         </center>
 
         <div class="dotted-gradient"></div>
-        <br>
+        <br />
 
 
         <form id="form" action="/projects" method="POST" class="was-validated">
-            <p> &#11044; Please, introduce a short description of your <strong>IDEA</strong></p></label>
+            <p class="text-class"> &#11044; Please, introduce a short description of your <strong>IDEA</strong></p>
+            </label>
 
             <!-- <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="name@example.com"> -->
 
-            <input type="text" class="form-control form-control-lg" placeholder="Type the name of the idea" id="idea"
+            <input type="text" class="form-control" height: "90" placeholder="Type the name of the idea" id="idea"
                 name="idea" required>
-                <!-- <div class="valid-feedback"></div> -->
+            <!-- <div class="valid-feedback"></div> -->
             <br>
-            <p><u>View examples</u></p>
+            <p class="u-line"><u>View examples</u></p>
             <div class="dotted-gradient"></div>
             <br>
 
-            <p> &#11044;<b> NAME</b> the project</p>
-            <input type="text" class="form-control form-control-lg" placeholder="Type here the name of the project"
+            <p class="text-class"> &#11044;<b> NAME</b> the project</p>
+            <input type="text" class="form-control  small-form" placeholder="Type here the name of the project"
                 id="name" name="name" required>
             <br>
-            <p><u>View examples</u></p>
+            <p class="u-line"><u>View examples</u></p>
             <div class="dotted-gradient"></div>
             <br>
 
-            <p> &#11044; What is the <b>MARKET</b> that you are targetting</p>
-            <input type="text" class="form-control form-control-lg"
+            <p class="text-class"> &#11044; What is the <b>MARKET</b> that you are targetting</p>
+            <input type="text" class="form-control small-form"
                 placeholder="Type here the market you are targetting ..."" id=" market" name="market" required>
             <br>
+            <p class="u-line"><u>View examples</u></p>
             <div class="dotted-gradient"></div>
             <br>
 
-            <p> &#11044; What <b>CONTINENT</b> are you targetting</p>
-            <select class="form-control " id="continent" name="continent" required>
+            <p class="text-class"> &#11044; What <b>CONTINENT</b> are you targetting</p>
+            <select class="form-control small-form" id="continent" name="continent" required>
                 <option value="">Select a continent</option>
                 <option value="North America">North America</option>
                 <option value="South America">South America</option>
@@ -95,14 +103,16 @@
             <div class="dotted-gradient"></div>
             <br>
 
-            <p> &#x25CF;And finally, what <b>COUNTRY</b> are you targetting</p>
-            <input type="text" class="form-control form-control-lg"
+            <p class="text-class"> &#x25CF; And finally, what <b>COUNTRY</b> are you targetting</p>
+            <input type="text" class="form-control small-form"
                 placeholder="Type here the country you are targetting ..." id="country" name="country" required>
             <br>
 
             <button id="submit" class="" type="submit" disabled="disabled">Generate a project &#8594</button>
         </form>
+    </div>
 
 
 </body>
+
 </html>

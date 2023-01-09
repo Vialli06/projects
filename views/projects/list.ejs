@@ -2,42 +2,50 @@
 <html>
   <head>
     <%- include('../partials/head'); %>
+    <script>
+      document.getElementById("current_date").innerHTML = Date();
+    </script>
   </head>
 
   <body>
-    <!-- <center><img src="flogo.webp" height :"150" width:"150" alt:"viz_logo" /></center> -->
-    <div class="row">
-      <center>
-        <img src="../images/autopilot.jpg" alt="centered image" />
-      </center>
-    </div>
-    <div id="box1" style="margin-left: 5px">
-      <div class="dotted-gradient"></div>
+    <br />
+    <div class="container">
+      <header>
+        <%- include('../partials/top-nav'); %> <%-
+        include('../partials/autopilot'); %>
+      </header>
+      <br />
+      <div class="row">
+        <div class="col">
+          <div class="dotted-gradient"></div>
+        </div>
+      </div>
+
       <table class="table table-borderless">
         <tbody>
           <% projects.forEach(function(project){ %>
           <tr class="row project">
             <td>
               <tr>
-                <th class="col-1">Idea:</th>
+                <th class="col-1">IDEA:</th>
                 <td class="col-4">
                   <a href="/projects/<%= project.id%>"> <%= project.idea %> </a>
                 </td>
               </tr>
               <tr>
-                <th class="col-1">Name:</th>
+                <th class="col-1">NAME:</th>
                 <td class="col-4"><%= project.name %></td>
               </tr>
               <tr>
-                <th class="col-1">Market:</th>
+                <th class="col-1">MARKET:</th>
                 <td class="col-4"><%= project.market %></td>
               </tr>
               <tr>
-                <th class="col-1">Continent:</th>
+                <th class="col-1">CONTINENT:</th>
                 <td class="col-4"><%= project.continent %></td>
               </tr>
               <tr>
-                <th class="col-1">Country:</th>
+                <th class="col-1">COUNTRY:</th>
                 <td class="col-4"><%= project.country %></td>
               </tr>
             </td>
@@ -46,6 +54,11 @@
         </tbody>
       </table>
       <div class="dotted-gradient"></div>
+      <div id="current_date">
+        <script>
+          document.getElementById("current_date").innerHTML = Date();
+        </script>
+      </div>
     </div>
   </body>
 </html>
