@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../partials/head'); %>
+    <script type="text/javascript" src="../javascript/form-validation.js"></script>
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <header><%- include('../partials/top-nav'); %>
+        <%- include('../partials/autopilot'); %></header>
+
+    </br>
+    <div class="dotted-gradient"></div>
+    <br />
+    <center>
+      <p class="new">
+        Vizologi on Autopilot generates a
+        <b>fully automatic AI-driven project</b> based on your data entry
+      </p>
+    </center>
+
+    <div class="dotted-gradient"></div>
+    <br />
+
+    <form id="form" class="was-validated" action="/projects/<%= project._id%>" method="post">
+      <p class="text-class">
+        &#11044; Please, introduce a short description of your
+        <strong>IDEA</strong>
+      </p>
+      <input type="text" class="form-control small-form" id="idea" name="idea" placeholder="Type the name of the idea"
+        value="<%= project.idea %>" required />
+      <br />
+      <p><u>View examples</u></p>
+      <div class="dotted-gradient"></div>
+      <br />
+      <p class="text-class">&#11044;<b> NAME</b> the project</p>
+      <input style="font-size: 18px" type="text" class="form-control small-form" id="name" name="name"
+        placeholder="Type here the name of the project" value="<%= project.name %>" required />
+      <br />
+      <p><u>View examples</u></p>
+      <div class="dotted-gradient"></div>
+      <br />
+      <p class="text-class">&#11044; What is the <b>MARKET</b> that you are targetting</p>
+      <input style="font-size: 18px" type="text" class="form-control small-form" id="market" name="market"
+        placeholder="Type here the market you are targetting ..." value="<%= project.market %>" required />
+      <br />
+      <div class="dotted-gradient"></div>
+      <br />
+      <p class="text-class">&#11044; What <b>CONTINENT</b> are you targetting</p>
+      <select style="font-size: 17.5px" required id="continent" class="form-control small-form" name="continent">
+        <option value="">Select a continent</option>
+        <option selected="<% if (project.continent == 'North America') { true } else { false } %>"
+          value="North America">
+          North America
+        </option>
+        <option selected="<% if (project.continent == 'South America') { true } else { false } %>"
+          value="South America">
+          South America
+        </option>
+        <option selected="<% if (project.continent == 'Asia') { true } else { false } %>" value="Asia">
+          Asia
+        </option>
+        <option selected="<% if (project.continent == 'Europe') { true } else { false } %>" value="Europe">
+          Europe
+        </option>
+        <option selected="<% if (project.continent == 'Africa') { true } else { false } %>" value="Africa">
+          Africa
+        </option>
+        <option selected="<% if (project.continent == 'Oceania') { true } else { false } %>" value="Oceania">
+          Oceania
+        </option>
+        <option selected="<% if (project.continent == 'Antartica') { true } else { false } %>" value="Antartica">
+          Antartica
+        </option>
+      </select>
+      <br />
+      <div class="dotted-gradient"></div>
+      <br />
+      <p class="text-class">&#11044;And finally, what <b>COUNTRY</b> are you targetting</p>
+      <input style="font-size: 18px" type="text" class="form-control small-form" id="country" name="country"
+        placeholder="Type here the country you are targetting ..." value="<%= project.country %>" required />
+      <br />
+      <button class="btn btn-success" onclick="validate()" id="submit" type="submit">
+        Update
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>

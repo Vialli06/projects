@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../partials/head'); %>
+        <script type="text/javascript" src="../javascript/form-validation.js"></script>
+</head>
+
+<body>
+
+    <br>
+
+
+
+    <div class="container">
+        <header>
+            <%- include('../partials/top-nav'); %>
+                <%- include('../partials/autopilot'); %>
+        </header>
+
+        </br>
+        <div class="dotted-gradient"></div>
+
+        <br>
+        <center>
+            <p class="new">Vizologi on Autopilot generates a <b>fully automatic AI-driven project</b> based on your
+                data entry</p>
+        </center>
+
+        <div class="dotted-gradient"></div>
+        <br />
+
+
+        <form id="form" action="/projects" method="POST" class="was-validated">
+            <p class="text-class"> &#11044; Please, introduce a short description of your <strong>IDEA</strong></p>
+            </label>
+
+            <!-- <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="name@example.com"> -->
+
+            <input type="text" class="form-control" placeholder="Type the name of the idea" id="idea" name="idea"
+                required>
+            <!-- <div class="valid-feedback"></div> -->
+            <br>
+            <p><u>View examples</u></p>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p class="text-class"> &#11044;<b> NAME</b> the project</p>
+            <input type="text" class="form-control  small-form" placeholder="Type here the name of the project"
+                id="name" name="name" required>
+            <br>
+            <p><u>View examples</u></p>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p class="text-class"> &#11044; What is the <b>MARKET</b> that you are targetting</p>
+            <input type="text" class="form-control small-form"
+                placeholder="Type here the market you are targetting ..."" id=" market" name="market" required>
+            <br>
+            <p><u>View examples</u></p>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p class="text-class"> &#11044; What <b>CONTINENT</b> are you targetting</p>
+            <select class="form-control small-form" id="continent" name="continent" required>
+                <option value="">Select a continent</option>
+                <option value="North America">North America</option>
+                <option value="South America">South America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Africa">Africa</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Antartica">Antartica</option>
+            </select>
+            </br>
+            <div class="dotted-gradient"></div>
+            <br>
+
+            <p class="text-class"> &#11044; And finally, what <b>COUNTRY</b> are you targetting</p>
+            <input type="text" class="form-control small-form"
+                placeholder="Type here the country you are targetting ..." id="country" name="country" required>
+            <br>
+
+            <button id="submit" class="" type="submit" disabled="disabled">Generate a project &#8594</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

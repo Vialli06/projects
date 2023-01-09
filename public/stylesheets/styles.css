@@ -1,0 +1,166 @@
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1400px;
+    }
+}
+
+.dotted-gradient {
+    height: 5px;
+    background-image: linear-gradient(to right, #000 30%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 13px 3px;
+    background-repeat: repeat-x;
+}
+
+.logo {
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.flogo-img {
+    height: 56px;
+    width: 149px
+}
+
+.auto-logo {
+    height: 128px;
+    width: 1220px
+}
+
+.google-logo {
+    background-color: #645BC8;
+    height: 79px;
+    width: 130px;
+}
+
+.google-logo img {
+    height: 37px;
+    width: 64px;
+}
+
+.spotify-logo {
+    background: #FCC44B;
+    margin-right: 2px;
+    height: 40px;
+    width: 64px;
+}
+
+.spotify-logo img {
+    height: 27px;
+    width: 45px;
+}
+
+.zara-logo {
+    background: #F47574;
+    height: 40px;
+    width: 64px;
+}
+
+.zara-logo img {
+    height: 27px;
+    width: 45px;
+}
+
+.new {
+    font-weight: regular;
+    font-size: 17.5px;
+    color: #000000;
+}
+
+.text-class {
+    width: 468px;
+    height: 24px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.form-control {
+    width: 1120x;
+    height: 90px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.small-form {
+
+    height: 60px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+button {
+    font-size: 17px;
+    padding: 10px;
+}
+
+button:disabled#submit,
+button[disabled]#submit {
+    background-color: grey;
+}
+
+#submit {
+    display: block;
+    margin: auto;
+    color: white;
+    background-color: green;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 0px;
+}
+
+.new-text {
+    width: 394px;
+    height: 24px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.title-text {
+    text-align: left;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.row-color {
+    height: 145px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+
+}
+
+.title {
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.desc {
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+    text-align: left;
+}
+
+.custom-container {
+    padding-left: 25px;
+    padding-right: 25px;
+}

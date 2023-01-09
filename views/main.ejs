@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <%- include('./partials/head'); %>
+  <%- include('./partials/head'); %>
 </head>
+
 <body>
+  <div class="container">
     <header>
-        <%- include('./partials/header'); %>
+      <%- include('./partials/top-nav'); %> <%- include('./partials/header'); %>
     </header>
-    <div id="container" class="container">
-        <div class="dotted-gradient"></div>
-        <br>
-        <center><p> You got <%= projects.length %> projects.Keep up the good work!</p></center>
-        <br>
-        <div class="dotted-gradient"></div>
 
-        <div class="row">
-           <div class="col-6">Project</div>
-           <div class="col-2">Owner</div>
-           <div class="col-2">Latest Update &darr;</div>
-        </div>
+    <div class="dotted-gradient"></div>
+    <br />
 
-        <div class="dotted-gradient"></div>
+    <center>
+      <p class="new-text">
+        You got <%= projects.length %> projects.Keep up the good work!
+      </p>
+    </center>
 
-        <% projects.forEach(function(project){ %>
-            <div class="row">
-                <div class="col-4">
-                    <div class="row">
-                        <button class="btn btn-info">Google</button>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <button class="btn btn-success" >ABC </button>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-warning" >DEF </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="title">
-                        <%= project['name'] %>
-                        <img src="/group-24px.svg" />
-                    </div>
-                    <div class="desc">
-                      <p><%= project['idea'] %></p>
-                    </div>
-                </div>
-                <div class="col-2">
-                    Me
-                </div>
-                <div class="col-2">
-                    <%= project['updatedAt'] %>
-                </div>
-            </div>
-        <% }); %>
-        <div class="row">
-            <div class="col-8">
-
-            </div>
-            <div class="col-2">
-                <a href="/project/new" id="" class="btn btn-dark">+ New Project</a>
-            </div>
-        </div>
+    <div class="dotted-gradient"></div>
+    </br>
+    <div class="row">
+      <div class="col-6">
+        <p class="title-text">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Project</p>
+      </div>
+      <div class="col-2">
+        <p class="title-text">Owner</p>
+      </div>
+      <div class="col-4">
+        <p class="title-text">Latest Update &darr;</p>
+      </div>
     </div>
+
+
+    <div class="dotted-gradient"></div>
+
+    <% projects.forEach(function(project){ %>
+      <div class="row m-2 row-color">
+        <div class="col-2">
+          <div class="row m-1">
+            <div class="col p-1 d-grid logo google-logo">
+              <img src="./images/google.png" alt="Cinque
+              Terre" class="img-fluid" />
+            </div>
+          </div>
+          <div class="row m-1">
+            <div class="col p-1 d-grid logo spotify-logo">
+              <img src="./images/spotify.png" class="img-fluid" alt="Cinque
+              Terre" />
+            </div>
+            <div class="col p-1 d-grid logo zara-logo">
+              <img src="./images/zara.png" class="img-fluid" alt="Cinque
+              Terre" />
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="title">
+            <%= project['name'] %>
+              <img src="./images/group-24px.svg" />
+              &nbsp;
+              <img src="./images/auto-icon.svg" />
+          </div>
+          <div class="desc">
+            <p>
+              <%= project['idea'] %>
+            </p>
+          </div>
+        </div>
+        <div class="col-2">Me</div>
+        <div class="col-4">
+          <%= new Intl.DateTimeFormat('en-GB', { year: 'numeric' , month: 'long' , day: '2-digit' }).format(new Date())
+            %>
+        </div>
+      </div>
+      <% }); %>
+        <div class="row">
+          <div class="col-8"></div>
+          <div class="col-2">
+            <a href="/project/new" id="" class="btn btn-dark">+ New Project</a>
+          </div>
+        </div>
+  </div>
 </body>
+
 </html>
